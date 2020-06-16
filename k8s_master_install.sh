@@ -6,6 +6,7 @@ install_dir=$(dirname "$0")
 yaml_dir="${install_dir}/yaml"
 
 sudo yum update -y
+sudo yum install wget -y
 
 #crio repo
 
@@ -99,6 +100,8 @@ kubeadm init --config=${yaml_dir}/kubeadm-config.yaml
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+kubectl taint nodes --all node-role.kubernetes.io/master-
 
 #install calico
 if [[ -z ${calicoVersion} ]]; then
