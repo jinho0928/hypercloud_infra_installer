@@ -16,6 +16,7 @@ Install Kubernetes, CRI-O, Calico, Kubevirt and HyperCloud
       * CRI-O major and minor versions must match Kubernetes major and minor versions.
       * ex : crioVersion=1.17 k8sVersion=1.17.6        
       * ex : crioVersion=1.18 k8sVersion=1.18.3
+      * ex : crioVersion=1.19 k8sVersion=1.19.4      
     * `apiServer` : The IP address the API Server will advertise it's listening on.
       * ex : apiServer={Kubernetes master IP}
       * ex : apiServer=172.22.5.2
@@ -24,10 +25,10 @@ Install Kubernetes, CRI-O, Calico, Kubevirt and HyperCloud
       * ex : podSubnet=10.244.0.0/16
     * `calicoVersion` : calico network plugin version(OPTIONAL)
       * If nothing is specified, the default version(v3.13.4) is installed.
-      * ex : calicoVersion=3.13
+      * ex : calicoVersion=3.16
     * `kubevirtVersion` : kubevirt plugin version(OPTIONAL)
       * If nothing is specified, the default version(v0.27.0) is installed.
-      * ex : kubevirtVersion=0.27.0
+      * ex : kubevirtVersion=0.34.2
 3. Execute installer script
     ```
     ./k8s_master_install.sh
@@ -61,6 +62,7 @@ Install Kubernetes and CRI-O
       * CRI-O major and minor versions must match Kubernetes major and minor versions.
       * ex : crioVersion=1.17 k8sVersion=1.17.6        
       * ex : crioVersion=1.18 k8sVersion=1.18.3
+      * ex : crioVersion=1.19 k8sVersion=1.19.4      
 3. Execute installer script
     ```
     ./k8s_node_install.sh
@@ -138,6 +140,8 @@ Install Kubernetes and CRI-O
 - This project has been verified in the following versions.
     - Kubernetes
         - `kubectl` version compatible with each kubernetes server version is required.
+        - v1.19
+        - v1.18        
         - v1.17
         - v1.16
         - v1.15
